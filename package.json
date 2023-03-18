@@ -1,0 +1,19 @@
+{
+  "name": "rtsp2web",
+  "version": "1.0.0",
+  "description": "A simple script that brings RTSP to web.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oozman <hi@oozman.com> <https://oozman.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cron": "^1.7.2",
+    "dotenv": "^8.2.0",
+    "ffmpeg": "^0.0.4",
+    "node-media-server": "^2.1.4",
+    "pm2": "^4.2.1"
+  }
+}
