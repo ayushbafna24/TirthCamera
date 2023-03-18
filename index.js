@@ -16,7 +16,7 @@ const config = {
         mediaroot: '/var/www/html/media',
     },
     relay: {
-        ffmpeg: './ffmpeg/bin/ffmpeg.exe',
+        ffmpeg: './ffmpeg_linux',
         tasks: [
             {
                 app: 'live',
@@ -28,7 +28,7 @@ const config = {
         ]
     },
     trans: {
-        ffmpeg: './ffmpeg/bin/ffmpeg.exe',
+        ffmpeg: './ffmpeg_linux',
         tasks: [
             {
                 app: 'live',
