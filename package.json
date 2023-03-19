@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "ncc build index.js -o dist"
   },
   "author": "Oozman <hi@oozman.com> <https://oozman.com>",
   "license": "ISC",
@@ -16,5 +17,8 @@
     "ffmpeg": "^0.0.4",
     "node-media-server": "^2.1.4",
     "pm2": "^4.2.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.36.1"
   }
 }
