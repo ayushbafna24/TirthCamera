@@ -15,6 +15,11 @@ const config = {
         allow_origin: '*',
         mediaroot: '/var/www/html/media',
     },
+    auth: {
+        play: true,
+        publish: true,
+        secret: 'nodemedia2017privatekey'
+    },
     relay: {
         ffmpeg: '/usr/bin/ffmpeg',
         tasks: [
