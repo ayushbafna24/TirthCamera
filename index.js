@@ -21,8 +21,8 @@ const config = {
             {
                 app: 'live',
                 mode: 'static',
-                edge: process.env.RTSP_URL,
-                name: process.env.RTSP_NAME,
+                edge: 'rtsp://admin:Gurudev123@43.229.227.94:554/cam/realmonitor?channel=1&subtype=1',
+                name: 'Tirth',
                 rtsp_transport : 'tcp' //['udp', 'tcp', 'udp_multicast', 'http']
             }
         ]
@@ -36,7 +36,7 @@ const config = {
                 hlsFlags: '[hls_time=2:hls_list_size=3:hls_flags=delete_segments]',
                 dash: true,
                 dashFlags: '[f=dash:window_size=3:extra_window_size=5]',
-                name: process.env.RTSP_NAME
+                name: 'Tirth'
             }
         ]
     }
