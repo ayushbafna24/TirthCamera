@@ -32,6 +32,6 @@ RUN cd /var/www/html && npm install
 
 WORKDIR /var/www/html
 
-EXPOSE 80 1935
+EXPOSE 80 1935 9080
 
 ENTRYPOINT ["/entrypoint.sh"]
