@@ -43,6 +43,13 @@ const config = {
         mp4: true,
         mp4Flags: "[movflags=frag_keyframe+empty_moov]",
       },
+      {
+        app: "cctv",
+        mode: "static",
+        edge: "rtsp://admin:Gurudev123@43.229.227.94:554/cam/realmonitor?channel=1&subtype=1",
+        name: "Tirth1",
+        rtsp_transport: "tcp", //['udp', 'tcp', 'udp_multicast', 'http']
+      },
     ],
   },
 };
