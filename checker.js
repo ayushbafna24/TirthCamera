@@ -2,9 +2,11 @@ require('dotenv').config();
 const pm2 = require('pm2');
 const http = require('axios');
 const CronJob = require('cron').CronJob;
+var os = require("os");
+var hostname = os.hostname();
 
 let delay = parseInt(60);
-let streamUrl = 'http://0.0.0.0/live/' + 'Tirth' + '/index.m3u8';
+let streamUrl = 'https://'+hostname+'/live/' + 'Tirth' + '/index.m3u8';
 let failed = 0;
 let restartIn = 3;
 
