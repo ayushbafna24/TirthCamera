@@ -43,7 +43,7 @@ function runCron(delay) {
         }).finally(() => {
             isChecking = false;
         });
-    }, null, true, 'India/Kolkata');
+    }, null, true, 'Asia/Kolkata');
 }
 
 /**
