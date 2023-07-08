@@ -3,7 +3,7 @@ const pm2 = require('pm2');
 const http = require('axios');
 const CronJob = require('cron').CronJob;
 
-let delay = parseInt(10);
+let delay = parseInt(60);
 let streamUrl = 'http://0.0.0.0/live/' + 'Tirth' + '/index.m3u8';
 let failed = 0;
 let restartIn = 3;
@@ -16,9 +16,9 @@ runCron(delay);
 function runCron(delay) {
 
     // If auto restart is disabled, don't run checker.
-    if (true !== "true") {
-        return stopChecker();
-    }
+    // if (true !== "true") {
+    //     return stopChecker();
+    // }
 
     let isChecking = false;
 
