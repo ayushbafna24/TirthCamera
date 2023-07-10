@@ -8,7 +8,7 @@ var hostname = os.hostname();
 let delay = parseInt(60);
 let streamUrl = 'https://tirth.onrender.com/live/Tirth/index.m3u8';
 let failed = 0;
-let restartIn = 1;
+let restartIn = 0;
 
 runCron(delay);
 
