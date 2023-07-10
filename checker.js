@@ -5,7 +5,7 @@ const CronJob = require('cron').CronJob;
 var os = require("os");
 var hostname = os.hostname();
 
-let delay = parseInt(60);
+let delay = parseInt(10);
 let streamUrl = 'https://tirth.onrender.com/live/Tirth/index.m3u8';
 let failed = 0;
 let restartIn = 0;
