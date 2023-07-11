@@ -2,13 +2,11 @@ require('dotenv').config();
 const pm2 = require('pm2');
 const http = require('axios');
 const CronJob = require('cron').CronJob;
-var os = require("os");
-var hostname = os.hostname();
 
 let delay = parseInt(10);
 let streamUrl = 'https://tirth.onrender.com/live/Tirth/index.m3u8';
 let failed = 0;
-let restartIn = 0;
+let restartIn = 3;
 
 runCron(delay);
 
@@ -22,14 +20,9 @@ function runCron(delay) {
     //     return stopChecker();
     // }
 
-    let isChecking = false;
+    // let isChecking = false;
 
     new CronJob('*/' + delay + ' * * * * *', () => {
-
-        if (isChecking) {
-            console.log("Currently checking at the moment.");
-            return true;
-        }
 
         // If not found, restart and re-stream.
         if (failed > restartIn) {
@@ -42,8 +35,6 @@ function runCron(delay) {
         }).catch(xhr => {
             failed++;
             console.log(xhr);
-        }).finally(() => {
-            isChecking = false;
         });
     }, null, true, 'Asia/Kolkata');
 }
