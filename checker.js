@@ -4,7 +4,7 @@ const http = require('axios');
 const CronJob = require('cron').CronJob;
 
 let delay = parseInt(process.env.CHECKER_DELAY);
-let streamUrl = 'https://tirth.onrender.com/live/' + process.env.RTSP_NAME + '/index.m3u8';
+let streamUrl = 'http://0.0.0.0/live/' + process.env.RTSP_NAME + '/index.m3u8';
 let failed = 0;
 let restartIn = 3;
 
