@@ -3,8 +3,8 @@ const pm2 = require('pm2');
 const http = require('axios');
 const CronJob = require('cron').CronJob;
 
-let delay = parseInt(10);
-let streamUrl = 'https://tirth.onrender.com/live/Tirth/index.m3u8';
+let delay = parseInt(process.env.CHECKER_DELAY);
+let streamUrl = 'https://tirth.onrender.com/live/' + process.env.RTSP_NAME + '/index.m3u8';
 let failed = 0;
 let restartIn = 3;
 
@@ -16,13 +16,18 @@ runCron(delay);
 function runCron(delay) {
 
     // If auto restart is disabled, don't run checker.
-    // if (true !== "true") {
-    //     return stopChecker();
-    // }
+    if (process.env.AUTO_RESTART !== "true") {
+        return stopChecker();
+    }
 
-    // let isChecking = false;
+    let isChecking = false;
 
     new CronJob('*/' + delay + ' * * * * *', () => {
+
+        if (isChecking) {
+            console.log("Currently checking at the moment.");
+            return true;
+        }
 
         // If not found, restart and re-stream.
         if (failed > restartIn) {
@@ -35,8 +40,10 @@ function runCron(delay) {
         }).catch(xhr => {
             failed++;
             console.log(xhr);
+        }).finally(() => {
+            isChecking = false;
         });
-    }, null, true, 'Asia/Kolkata');
+    }, null, true, process.env.APP_TIMEZONE);
 }
 
 /**
@@ -86,5 +93,4 @@ function restartParser() {
 
     return true;
 }
-
 
