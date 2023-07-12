@@ -16,9 +16,9 @@ runCron(delay);
 function runCron(delay) {
 
     // If auto restart is disabled, don't run checker.
-    if (process.env.AUTO_RESTART !== "true") {
-        return stopChecker();
-    }
+    // if (process.env.AUTO_RESTART !== "true") {
+    //     return stopChecker();
+    // }
 
     let isChecking = false;
 
