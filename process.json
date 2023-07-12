@@ -3,10 +3,7 @@
     {
       "name": "parser",
       "script": "./index.js",
-      "watch": true,
       "instances": 1,
-      "watch_delay": 1000,
-      "ignore_watch": ["node_modules"],
       "exec_mode": "cluster_mode"
     },
     {
