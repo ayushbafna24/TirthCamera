@@ -4,7 +4,7 @@
       "name": "parser",
       "script": "./index.js",
       "instances": 1,
-      "exec_mode": "cluster_mode"
+      "exec_mode": "cluster"
     },
     {
       "name": "checker",
