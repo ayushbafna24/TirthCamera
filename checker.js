@@ -16,18 +16,13 @@ runCron(delay);
 function runCron(delay) {
 
     // If auto restart is disabled, don't run checker.
-    // if (process.env.AUTO_RESTART !== "true") {
-    //     return stopChecker();
-    // }
+    if (process.env.AUTO_RESTART !== true) {
+        console.log("Auto Restart Disable Mode");
+        return stopChecker();
+    }
 
-    let isChecking = false;
 
     new CronJob('*/' + delay + ' * * * * *', () => {
-
-        if (isChecking) {
-            console.log("Currently checking at the moment.");
-            return true;
-        }
 
         // If not found, restart and re-stream.
         if (failed > restartIn) {
@@ -40,8 +35,6 @@ function runCron(delay) {
         }).catch(xhr => {
             failed++;
             console.log(xhr);
-        }).finally(() => {
-            isChecking = false;
         });
     }, null, true, process.env.APP_TIMEZONE);
 }
