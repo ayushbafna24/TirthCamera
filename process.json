@@ -6,7 +6,8 @@
       "watch": true,
       "instances": 1,
       "watch_delay": 1000,
-      "ignore_watch": ["node_modules"]
+      "ignore_watch": ["node_modules"],
+      "exec_mode": "cluster_mode"
     },
     {
       "name": "checker",
